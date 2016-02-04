@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+	<head>
+    <title>Session7 NoTextInput</title>
+  </head>
+ 	<body>
+ 		<p>Problem Statement: Write a HTML page holding a form and a text field.When a non-number character is entered make the field red for a while and do not accept the change.
+    <form method="get">
+    	Enter Pin Code:<input id="number" type="text">
+    </form>
+ </body>
+  
+	<script>
+		var pin = document.getElementById('number');
+ 		pin.addEventListener('input', function check() {
+ 				if (/\D/g.test(pin.value)) {
+ 				pin.value = (pin.value).replace(/\D/, '');
+ 				pin.style.backgroundColor = "red";
+ 				setTimeout(color, 500);
+ 			}
+ 			function color() {
+    pin.style.backgroundColor ="white";
+		}
+
+ 		}
+		)
+		
+ 	</script>
